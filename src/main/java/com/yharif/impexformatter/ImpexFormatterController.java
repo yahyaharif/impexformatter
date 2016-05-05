@@ -24,9 +24,9 @@ public class ImpexFormatterController {
 
 	@RequestMapping(value = "/result", method = RequestMethod.POST)
 	public String result(@ModelAttribute("formattedImpex") Impex impex, ModelMap model) {
-		model.addAttribute("macros", impex.getMacros());
-		model.addAttribute("header", impex.getHeader());
-		model.addAttribute("content", impex.getContent());
+		model.addAttribute("iMacros", impex.getiMacros());
+		model.addAttribute("iHeader", impex.getiHeader());
+		model.addAttribute("iContent", impex.getiContent());
 
 		return "result";
 	}

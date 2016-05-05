@@ -1,15 +1,15 @@
 package com.yharif.impexformatter.model;
 
 public class Impex {
-	private String macros;
-	private String header;
-	private String content;
+	private String iMacros;
+	private String iHeader;
+	private String iContent;
 
-	public Impex(String macros, String header, String content) {
+	public Impex(String iMacros, String iHeader, String iContent) {
 		super();
-		this.macros = macros;
-		this.header = header;
-		this.content = content;
+		this.iMacros = iMacros;
+		this.iHeader = iHeader;
+		this.iContent = iContent;
 	}
 
 	public Impex() {
@@ -17,28 +17,28 @@ public class Impex {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getMacros() {
-		return macros;
+	public String getiMacros() {
+		return iMacros;
 	}
 
-	public void setMacros(String macros) {
-		this.macros = macros;
+	public void setiMacros(String iMacros) {
+		this.iMacros = iMacros;
 	}
 
-	public String getHeader() {
-		return header;
+	public String getiHeader() {
+		return iHeader;
 	}
 
-	public void setHeader(String header) {
-		this.header = header;
+	public void setiHeader(String iHeader) {
+		this.iHeader = iHeader;
 	}
 
-	public String getContent() {
-		return content;
+	public String getiContent() {
+		return iContent;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setiContent(String iContent) {
+		this.iContent = iContent;
 	}
 
 }

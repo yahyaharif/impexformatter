@@ -8,35 +8,37 @@
 		<h5>Please type/paste your Hybris Impex Snippet</h5>
 	</div>
 	<div class="panel-body">
-		<form:form>
+		<c:url var="action" value="/result"></c:url>
+		<form:form method="POST" action="${action}">
 			<div class="page-header">
 				<h6>Macros</h6>
 			</div>
 			<div class="well">
-				<form:textarea path="macros" cssClass="form-control" rows="2" />
+				<form:textarea path="iMacros" cssClass="form-control" rows="2" />
 			</div>
 			<div class="page-header">
 				<h6>Header</h6>
 			</div>
 			<div class="well">
-				<form:textarea path="header" cssClass="form-control" rows="1" />
+				<form:textarea path="iHeader" cssClass="form-control" rows="1" />
 			</div>
 			<div class="page-header">
 				<h6>Content</h6>
 			</div>
 			<div class="well">
-				<form:textarea path="content" cssClass="form-control" rows="5" />
+				<form:textarea path="iContent" cssClass="form-control" rows="5" />
 			</div>
-		</form:form>
-		<br />
 
-		<center>
-			<div class="form-group">
-				<button type="submit" class="btn btn-lg btn-primary">Submit</button>
-				&nbsp;
-				<button type="reset" class="btn btn-lg btn-default">Cancel</button>
-			</div>
-		</center>
+			<br />
+
+			<center>
+				<div class="form-group">
+					<button type="submit" class="btn btn-lg btn-primary">Submit</button>
+					&nbsp;
+					<button type="reset" class="btn btn-lg btn-default">Cancel</button>
+				</div>
+			</center>
+		</form:form>
 
 	</div>
 </tag:master>
