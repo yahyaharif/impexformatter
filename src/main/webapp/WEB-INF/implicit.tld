@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib 
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1"
+>    
+    <display-name>Custom Tags</display-name>    
+    <tlib-version>1.0</tlib-version>
+    <short-name>tag</short-name>
+    <uri>http://www.impexformatter.com/tags</uri>
+    
+    <!-- Master tag -->
+    <tag-file>
+        <name>master</name>
+        <path>/WEB-INF/tags/master.tag</path>
+    </tag-file>
+
+	<!-- Stylesheets -->
+    <tag-file>
+        <name>stylesheets</name>
+        <path>/WEB-INF/tags/stylesheets.tag</path>
+    </tag-file>
+
+	<!-- Scripts -->
+	<tag-file>
+        <name>scripts</name>
+        <path>/WEB-INF/tags/scripts.tag</path>
+    </tag-file>
+    
+    <!-- Navbar -->
+    <tag-file>
+        <name>navbar</name>
+        <path>/WEB-INF/tags/navbar.tag</path>
+    </tag-file>
+    
+    <!-- Social -->
+    <tag-file>
+        <name>social</name>
+        <path>/WEB-INF/tags/social.tag</path>
+    </tag-file>
+	
+</taglib>
