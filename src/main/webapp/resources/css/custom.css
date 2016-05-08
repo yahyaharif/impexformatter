@@ -1,7 +1,11 @@
-body{
-	padding-top: 140px;
+body {
+	padding-top: 100px;
 }
 
-.margin-top-20{
+.margin-top-20 {
 	margin-top: 20px;
+}
+
+th {
+	font-size: 14px;
 }

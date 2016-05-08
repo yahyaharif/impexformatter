@@ -18,9 +18,7 @@
 		<tag:social />
 
 		<div class="row margin-top-20">
-			<div class="panel panel-default">
-				<jsp:doBody />
-			</div>
+			<jsp:doBody />
 		</div>
 
 	</div>

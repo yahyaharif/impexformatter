@@ -4,41 +4,48 @@
 <%@ page session="false"%>
 
 <tag:master>
-	<div class="panel-heading">
-		<h5>Please type/paste your Hybris Impex Snippet</h5>
-	</div>
-	<div class="panel-body">
-		<c:url var="action" value="/result"></c:url>
-		<form:form method="POST" action="${action}">
-			<div class="page-header">
-				<h6>Macros</h6>
-			</div>
-			<div class="well">
-				<form:textarea path="iMacros" cssClass="form-control" rows="2" />
-			</div>
-			<div class="page-header">
-				<h6>Header</h6>
-			</div>
-			<div class="well">
-				<form:textarea path="iHeader" cssClass="form-control" rows="1" />
-			</div>
-			<div class="page-header">
-				<h6>Content</h6>
-			</div>
-			<div class="well">
-				<form:textarea path="iContent" cssClass="form-control" rows="5" />
-			</div>
-
-			<br />
-
-			<center>
-				<div class="form-group">
-					<button type="submit" class="btn btn-lg btn-primary">Submit</button>
-					&nbsp;
-					<button type="reset" class="btn btn-lg btn-default">Cancel</button>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h5>
+				Please enter your <strong>Hybris Impex</strong> snippet
+			</h5>
+		</div>
+		<div class="panel-body">
+			<c:url var="action" value="/result"></c:url>
+			<form:form method="POST" action="${action}">
+				<div class="page-header">
+					<h6>
+						<strong>Macros</strong>
+					</h6>
 				</div>
-			</center>
-		</form:form>
+				<form:textarea path="iMacros" cssClass="form-control"
+					cssStyle="font-size: 12px;" rows="2" />
+				<div class="page-header">
+					<h6>
+						<strong>Header</strong>
+					</h6>
+				</div>
+				<form:textarea path="iHeader" cssClass="form-control"
+					cssStyle="font-size: 12px;" rows="1" />
+				<div class="page-header">
+					<h6>
+						<strong>Content</strong>
+					</h6>
+				</div>
+				<form:textarea path="iContent" cssClass="form-control"
+					cssStyle="font-size: 12px;" rows="5" />
 
+				<br />
+
+				<center>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">Submit</button>
+						&nbsp;
+						<button type="reset" class="btn btn-default">Cancel</button>
+					</div>
+				</center>
+			</form:form>
+
+		</div>
 	</div>
 </tag:master>

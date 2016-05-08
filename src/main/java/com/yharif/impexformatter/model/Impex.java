@@ -17,27 +17,27 @@ public class Impex {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getiMacros() {
+	public String getIMacros() {
 		return iMacros;
 	}
 
-	public void setiMacros(String iMacros) {
+	public void setIMacros(String iMacros) {
 		this.iMacros = iMacros;
 	}
 
-	public String getiHeader() {
+	public String getIHeader() {
 		return iHeader;
 	}
 
-	public void setiHeader(String iHeader) {
+	public void setIHeader(String iHeader) {
 		this.iHeader = iHeader;
 	}
 
-	public String getiContent() {
+	public String getIContent() {
 		return iContent;
 	}
 
-	public void setiContent(String iContent) {
+	public void setIContent(String iContent) {
 		this.iContent = iContent;
 	}
 

@@ -4,14 +4,16 @@
 <%@ page session="false"%>
 
 <tag:master>
-	<div class="panel-heading">
-		<h5>Please type/paste your Hybris Impex Snippet</h5>
-	</div>
-	<div class="panel-body">
-		${iMacro}
-		
-		${iHeader}
-		
-		${iContent}
+	<div class="panel panel-default" style="border-top: 1px solid #eee;">
+		<div class="panel-body">
+			<table id="result"
+				class="table table-striped table-condensed table-responsive">
+				<thead>
+					<c:forEach var="column" items="${IHeaderColumns}">
+						<th>${column}</th>
+					</c:forEach>
+				</thead>
+			</table>
+		</div>
 	</div>
 </tag:master>

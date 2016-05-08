@@ -1,9 +1,9 @@
 <%@ tag body-content="empty" trimDirectiveWhitespaces="true"%>
 <div class="row">
 	<div class="col-sm-8">
-		<p>ImpexFormatter formats Hybris Impex snippets into well-presented tables for better readability</p>
+		<p><strong class="text-primary">ImpexFormatter</strong> formats <strong>Hybris Impex</strong> snippets into well-presented tables for better readability</p>
 	</div>
-	<div class="col-sm-4">
+	<div class="col-sm-4 text-right">
 		<a data-count-api="/repos/yahyaharif/impexformatter#stargazers_count"
 			data-count-href="/yahyaharif/impexformatter/stargazers"
 			data-icon="octicon-star"
