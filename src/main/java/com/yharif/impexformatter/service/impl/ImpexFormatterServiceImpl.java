@@ -34,7 +34,7 @@ public class ImpexFormatterServiceImpl implements ImpexFormatterService {
 		List<String> mapHeaderColumns = new ArrayList<String>();
 
 		// Get impex attributes
-		String trimmedHeader = StringUtils.replace(header, "\\s", "");
+		String trimmedHeader = StringUtils.replace(header, " ", "");
 		String[] attributes = StringUtils.substring(trimmedHeader, StringUtils.indexOf(trimmedHeader, ";") + 1)
 				.split(";");
 		for (int i = 0; i < attributes.length; i++) {
@@ -52,8 +52,17 @@ public class ImpexFormatterServiceImpl implements ImpexFormatterService {
 
 	@Override
 	public HashMap<String, String> parseMacros(String macros) {
-		// TODO Auto-generated method stub
-		return null;
+		// TODO: Add validation macro syntax in controller
+		String trimmedMacro = StringUtils.replace(macros, " ", "");
+		String oneLineMacro = StringUtils.replace(trimmedMacro, "\r\n", "");
+		String[] lineMacros = oneLineMacro.split("$");
+		HashMap<String, String> mapMacros = new HashMap<String, String>();
+		for (int i = 0; i < lineMacros.length; i++) {
+			mapMacros.put(StringUtils.substringBefore(trimmedMacro, "="),
+					StringUtils.substringAfter(trimmedMacro, "="));
+		}
+
+		return mapMacros;
 	}
 
 }

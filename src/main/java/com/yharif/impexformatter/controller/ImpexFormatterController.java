@@ -32,7 +32,7 @@ public class ImpexFormatterController {
 		Matcher matcher = pattern.matcher(impex.getIHeader());
 		if (StringUtils.isNotBlank(impex.getIHeader()) && matcher.find() && StringUtils
 				.length(StringUtils.substring(impex.getIHeader(), StringUtils.indexOf(impex.getIHeader(), ";"))) > 0) {
-			model.addAttribute("IMacros", impex.getIMacros());
+			model.addAttribute("IMacros", impexFormatterService.parseMacros(impex.getIMacros()));
 			model.addAttribute("IHeaderInfo", impexFormatterService.parseHeaderInfo(impex.getIHeader()));
 			model.addAttribute("IHeaderColumns", impexFormatterService.parseHeaderColumns(impex.getIHeader()));
 			model.addAttribute("IContent", impex.getIContent());

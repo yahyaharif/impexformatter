@@ -1,5 +1,3 @@
 $(document).ready(function() {
-    $('#result').DataTable({
-    	"scrollX": true
-    });
-} );
+	$('#result').DataTable();
+});

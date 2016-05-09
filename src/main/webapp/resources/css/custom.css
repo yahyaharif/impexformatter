@@ -6,6 +6,10 @@ body {
 	margin-top: 20px;
 }
 
-th {
+th,td {
 	font-size: 14px;
+}
+
+#result{
+	margin-top: 15px;
 }
