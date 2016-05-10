@@ -13,3 +13,8 @@ th,td {
 #result{
 	margin-top: 15px;
 }
+
+.fixedHeight{
+	max-height: 100px;
+	overflow-y: auto;
+}

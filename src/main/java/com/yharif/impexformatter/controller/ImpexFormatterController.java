@@ -28,17 +28,26 @@ public class ImpexFormatterController {
 
 	@RequestMapping(value = "/result", method = RequestMethod.POST)
 	public String result(@ModelAttribute("formattedImpex") Impex impex, ModelMap model) {
-		Pattern pattern = Pattern.compile(".*?(\\s+).*?(;)");
-		Matcher matcher = pattern.matcher(impex.getIHeader());
-		if (StringUtils.isNotBlank(impex.getIHeader()) && matcher.find() && StringUtils
-				.length(StringUtils.substring(impex.getIHeader(), StringUtils.indexOf(impex.getIHeader(), ";"))) > 0) {
+
+		// Header validation
+		Pattern patternHeader = Pattern.compile(".*?(\\s+).*?(;)");
+		Matcher matcherHeader = patternHeader.matcher(impex.getIHeader());
+		// Macro validation
+		Pattern patternMacro = Pattern.compile("");
+		Matcher matcherMacro = patternMacro.matcher(impex.getIMacros());
+		// Content validation
+		Pattern patternContent = Pattern.compile("");
+		Matcher matcherContent = patternContent.matcher(impex.getIContent());
+
+		if (matcherHeader.find() && matcherMacro.find() && matcherContent.find()) {
 			model.addAttribute("IMacros", impexFormatterService.parseMacros(impex.getIMacros()));
 			model.addAttribute("IHeaderInfo", impexFormatterService.parseHeaderInfo(impex.getIHeader()));
 			model.addAttribute("IHeaderColumns", impexFormatterService.parseHeaderColumns(impex.getIHeader()));
-			model.addAttribute("IContent", impex.getIContent());
+			model.addAttribute("IContent", impexFormatterService.parseContent(impex.getIHeader(), impex.getIContent()));
 
 			return "result";
 		}
+
 		return "error";
 	}
 

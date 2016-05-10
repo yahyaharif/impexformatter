@@ -45,21 +45,37 @@ public class ImpexFormatterServiceImpl implements ImpexFormatterService {
 	}
 
 	@Override
-	public HashMap<String, String> parseContent(String content) {
-		// TODO Auto-generated method stub
-		return null;
+	public HashMap<String, String[]> parseContent(String header, String content) {
+		String oneLineContent = StringUtils.replace(content, "\r\n", "");
+		int nbColumns = parseHeaderColumns(header).size();
+		int counter = 0;
+		int start = 0;
+		HashMap<String, String[]> mapContent = new HashMap<String, String[]>();
+		for (int i = 0; i < oneLineContent.length(); i++) {
+			if (oneLineContent.charAt(i) == ';') {
+				counter++;
+				if (counter == nbColumns) {
+					mapContent.put("header" + i, StringUtils.substring(oneLineContent, start, i + 1).split(";"));
+					start = i + 1;
+					counter = 0;
+				}
+			}
+
+		}
+		return mapContent;
 	}
 
 	@Override
 	public HashMap<String, String> parseMacros(String macros) {
-		// TODO: Add validation macro syntax in controller
-		String trimmedMacro = StringUtils.replace(macros, " ", "");
+		String noSemiColon = StringUtils.replace(macros, ";", "");
+		String trimmedMacro = StringUtils.replace(noSemiColon, " ", "");
 		String oneLineMacro = StringUtils.replace(trimmedMacro, "\r\n", "");
-		String[] lineMacros = oneLineMacro.split("$");
+		String[] lineMacros = oneLineMacro.split("\\$");
 		HashMap<String, String> mapMacros = new HashMap<String, String>();
 		for (int i = 0; i < lineMacros.length; i++) {
-			mapMacros.put(StringUtils.substringBefore(trimmedMacro, "="),
-					StringUtils.substringAfter(trimmedMacro, "="));
+			if (!lineMacros[i].equals(""))
+				mapMacros.put(StringUtils.substringBefore(lineMacros[i], "="),
+						StringUtils.substringAfter(lineMacros[i], "="));
 		}
 
 		return mapMacros;

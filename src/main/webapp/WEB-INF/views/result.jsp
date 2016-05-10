@@ -7,30 +7,38 @@
 	<div class="row">
 		<div class="col-sm-4">
 			<div class="panel panel-default" style="border-top: 1px solid #eee;">
-				<div class="panel-body">
+				<div class="panel-body fixedHeight">
 					<table class="table table-condensed">
-						<tr>
-							<td>Mode</td>
-							<td><strong class="text-primary">${IHeaderInfo['mode']}</strong></td>
-						</tr>
-						<tr>
-							<td>Type</td>
-							<td><strong>${IHeaderInfo['type']}</strong></td>
-						</tr>
+						<tbody>
+							<tr>
+								<td>Mode</td>
+								<td><strong class="text-primary">${IHeaderInfo['mode']}</strong></td>
+							</tr>
+							<tr>
+								<td>Type</td>
+								<td><strong>${IHeaderInfo['type']}</strong></td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-8">
 			<div class="panel panel-default" style="border-top: 1px solid #eee;">
-				<div class="panel-body">
+				<div class="panel-body fixedHeight">
 					<table class="table table-condensed">
-						<c:forEach items="${IMacros}" var="macro">
-							<tr>
-								<td><strong class="text-danger">${macro.key}</strong></td>
-								<td>${macro.value}</td>
-							</tr>
-						</c:forEach>
+						<thead>
+							<th>Macro</th>
+							<th>Value</th>
+						</thead>
+						<tbody>
+							<c:forEach items="${IMacros}" var="macro">
+								<tr>
+									<td><strong class="text-danger">${macro.key}</strong></td>
+									<td>${macro.value}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
 					</table>
 				</div>
 			</div>
