@@ -28,8 +28,10 @@
 				<div class="panel-body fixedHeight">
 					<table class="table table-condensed">
 						<thead>
-							<th>Macro</th>
-							<th>Value</th>
+							<tr>
+								<th>Macro</th>
+								<th>Value</th>
+							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${IMacros}" var="macro">
@@ -50,11 +52,23 @@
 				<div class="panel-body">
 					<div class="table-responsive">
 						<table id="result" class="table table-striped table-condensed">
-							<thead>
-								<c:forEach var="column" items="${IHeaderColumns}">
-									<th>${column}</th>
-								</c:forEach>
+							<thead class="text-capitalize">
+								<tr>
+									<th class="typeImpex">${IHeaderInfo['type']}</th>
+									<c:forEach var="column" items="${IHeaderColumns}">
+										<th>${column}</th>
+									</c:forEach>
+								</tr>
 							</thead>
+							<tbody>
+								<c:forEach items="${IContent}" var="contentRow">
+									<tr>
+										<c:forEach items ="${contentRow.value}" var="contentColumn">
+											<td>${contentColumn}</td>
+										</c:forEach>
+									</tr>
+								</c:forEach>
+							</tbody>
 						</table>
 					</div>
 				</div>

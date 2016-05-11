@@ -18,3 +18,8 @@ th,td {
 	max-height: 100px;
 	overflow-y: auto;
 }
+
+.typeImpex{
+	font-weight: bold;
+	color: aqua;
+}

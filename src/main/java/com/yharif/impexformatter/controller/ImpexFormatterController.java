@@ -39,11 +39,11 @@ public class ImpexFormatterController {
 		Pattern patternContent = Pattern.compile("");
 		Matcher matcherContent = patternContent.matcher(impex.getIContent());
 
-		if (matcherHeader.find() && matcherMacro.find() && matcherContent.find()) {
+		if (matcherHeader.find()) {
 			model.addAttribute("IMacros", impexFormatterService.parseMacros(impex.getIMacros()));
 			model.addAttribute("IHeaderInfo", impexFormatterService.parseHeaderInfo(impex.getIHeader()));
 			model.addAttribute("IHeaderColumns", impexFormatterService.parseHeaderColumns(impex.getIHeader()));
-			model.addAttribute("IContent", impexFormatterService.parseContent(impex.getIHeader(), impex.getIContent()));
+			model.addAttribute("IContent", impexFormatterService.parseContent(impex.getIContent()));
 
 			return "result";
 		}

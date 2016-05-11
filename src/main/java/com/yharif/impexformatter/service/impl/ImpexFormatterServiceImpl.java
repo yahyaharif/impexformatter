@@ -45,22 +45,13 @@ public class ImpexFormatterServiceImpl implements ImpexFormatterService {
 	}
 
 	@Override
-	public HashMap<String, String[]> parseContent(String header, String content) {
-		String oneLineContent = StringUtils.replace(content, "\r\n", "");
-		int nbColumns = parseHeaderColumns(header).size();
-		int counter = 0;
-		int start = 0;
+	public HashMap<String, String[]> parseContent(String content) {
+		String[] splitContent = content.split("\r\n");
 		HashMap<String, String[]> mapContent = new HashMap<String, String[]>();
-		for (int i = 0; i < oneLineContent.length(); i++) {
-			if (oneLineContent.charAt(i) == ';') {
-				counter++;
-				if (counter == nbColumns) {
-					mapContent.put("header" + i, StringUtils.substring(oneLineContent, start, i + 1).split(";"));
-					start = i + 1;
-					counter = 0;
-				}
-			}
-
+		for (int i = 0; i < splitContent.length; i++) {
+			if (splitContent[i].equals(""))
+				splitContent[i] = "-";
+			mapContent.put("line" + i, splitContent[i].split(";"));
 		}
 		return mapContent;
 	}

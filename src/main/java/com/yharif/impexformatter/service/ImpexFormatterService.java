@@ -9,7 +9,7 @@ public interface ImpexFormatterService {
 	
 	public List<String> parseHeaderColumns(String header);
 
-	public HashMap<String, String[]> parseContent(String header, String content);
+	public HashMap<String, String[]> parseContent(String content);
 
 	public HashMap<String, String> parseMacros(String macros);
 
