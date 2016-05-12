@@ -63,8 +63,15 @@
 							<tbody>
 								<c:forEach items="${IContent}" var="contentRow">
 									<tr>
-										<c:forEach items ="${contentRow.value}" var="contentColumn">
-											<td>${contentColumn}</td>
+										<c:forEach items="${contentRow.value}" var="contentColumn">
+											<td>
+												<c:choose>
+													<c:when test="${contentColumn eq ''}">-</c:when>
+													<c:otherwise>
+														${contentColumn}
+													</c:otherwise>
+												</c:choose>
+											</td>
 										</c:forEach>
 									</tr>
 								</c:forEach>

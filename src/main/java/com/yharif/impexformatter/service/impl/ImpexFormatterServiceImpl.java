@@ -35,7 +35,8 @@ public class ImpexFormatterServiceImpl implements ImpexFormatterService {
 
 		// Get impex attributes
 		String trimmedHeader = StringUtils.replace(header, " ", "");
-		String[] attributes = StringUtils.substring(trimmedHeader, StringUtils.indexOf(trimmedHeader, ";") + 1)
+		String oneLineHeader = StringUtils.replace(trimmedHeader, "\r\n", "");
+		String[] attributes = StringUtils.substring(oneLineHeader, StringUtils.indexOf(oneLineHeader, ";") + 1)
 				.split(";");
 		for (int i = 0; i < attributes.length; i++) {
 			mapHeaderColumns.add(attributes[i]);
